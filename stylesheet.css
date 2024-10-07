@@ -1,0 +1,14 @@
+#button {
+    box-shadow: 10px 10px 20px #1aa59b;  font-size: 20px; text-decoration: none; border:solid 2px #1aa59b; padding: 15px 25px; color: #ffffff; background-color: rgb(0, 0, 0) ;  border-radius: 20px ; margin-left: 50px;
+    
+  }
+  #button:hover{
+    background-color: #000000;color:#1aa59b; border:3px solid #ffffff; border-radius: 20px; ;
+  }
+  #b2{
+    box-shadow: 10px 10px 30px #1aa59b; text-decoration: none; margin-left: 250px; padding: 10px 30px ; background-color: #000000; color: #1aa59b; border:2px solid #1aa59b; border-radius: 25px; 
+  }
+  #b2:hover{
+    border: 3px solid white; border-radius: 30px; background-color: #1aa59b;color: #000;
+    text-align: center; display: inline-block;
+  }

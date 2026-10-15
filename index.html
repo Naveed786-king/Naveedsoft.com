@@ -112,6 +112,28 @@ body:after{content:"";position:fixed;z-index:-1;inset:0;pointer-events:none;opac
 @media(max-width:800px){.service,.project,.stat,.step,.feedback-card{will-change:auto}.codecard{animation:cardHover 8s ease-in-out infinite}}
 @media(prefers-reduced-motion:reduce){.orb,.codecard,.whatsapp-float{animation:none!important}.service,.project,.stat,.step,.feedback-card{will-change:auto}}
 
+
+/* Accessible responsive client review slider */
+.review-shell{border-radius:28px;padding:20px;overflow:hidden}
+.review-viewport{overflow:hidden;touch-action:pan-y}
+.review-track{display:flex;align-items:stretch;transition:transform .55s cubic-bezier(.2,.75,.25,1);will-change:transform}
+.review-slide{flex:0 0 33.3333%;min-width:0;padding:14px 20px 22px;position:relative}
+.review-slide:not(:last-child){border-right:1px solid rgba(30,30,30,.08)}
+.review-quote{font-family:Georgia,serif;color:var(--orange);font-size:52px;line-height:1;margin-bottom:8px}
+.review-country{display:inline-block;font-size:10px;font-weight:850;letter-spacing:1.1px;color:#b84c10;background:#fff0e5;border-radius:999px;padding:6px 9px}
+.review-slide h3{font-size:21px;letter-spacing:-.5px;margin:14px 0 7px}
+.review-pending{font-size:13px;color:var(--muted);margin:0}
+.review-controls{display:flex;align-items:center;justify-content:center;gap:18px;padding:12px 0 4px}
+.review-arrow{width:38px;height:38px;border-radius:50%;border:1px solid rgba(30,30,30,.1);background:rgba(255,255,255,.8);font-size:20px;cursor:pointer;transition:background .2s,transform .2s}
+.review-arrow:hover{background:#fff0e5;transform:translateY(-2px)}
+.review-dots{display:flex;align-items:center;justify-content:center;gap:7px}
+.review-dot{width:7px;height:7px;padding:0;border:0;border-radius:99px;background:#d5d1cb;cursor:pointer;transition:width .25s,background .25s}
+.review-dot[aria-current="true"]{width:22px;background:var(--orange)}
+.review-note{text-align:center;font-size:11px;color:#817b73;margin:12px 0 0}
+@media(max-width:800px){.review-slide{flex-basis:50%;padding:12px 15px 20px}}
+@media(max-width:540px){.review-shell{padding:12px}.review-slide{flex-basis:100%;padding:14px 12px 20px}.review-slide:not(:last-child){border-right:0}.review-slide h3{font-size:20px}}
+@media(prefers-reduced-motion:reduce){.review-track,.review-arrow,.review-dot{transition:none!important}}
+
 </style>
 </head>
 <body>
@@ -142,7 +164,24 @@ body:after{content:"";position:fixed;z-index:-1;inset:0;pointer-events:none;opac
 <div class="project-grid">
 <article class="project glass"><a href="https://applestoreuganda.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Apple Store Uganda"><div class="project-art"><div class="mock-browser"><div class="mock-top"></div><div class="mock-hero"></div><div class="mock-bottom"><i></i><i></i><i></i></div></div></div></a><div class="project-info"><h3>Apple Store Uganda</h3><p>applestoreuganda.com</p><span class="tag">eCommerce · Apple products</span><div style="margin-top:14px"><a class="project-link" href="https://applestoreuganda.com/" target="_blank" rel="noopener noreferrer">Visit website <span>↗</span></a></div></div></article><article class="project glass"><a href="https://applecenteruganda.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Apple Center Uganda"><div class="project-art"><div class="mock-browser"><div class="mock-top"></div><div class="mock-hero"></div><div class="mock-bottom"><i></i><i></i><i></i></div></div></div></a><div class="project-info"><h3>Apple Center Uganda</h3><p>applecenteruganda.com</p><span class="tag">Retail · Product showcase</span><div style="margin-top:14px"><a class="project-link" href="https://applecenteruganda.com/" target="_blank" rel="noopener noreferrer">Visit website <span>↗</span></a></div></div></article><article class="project glass"><a href="https://appleshopuganda.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Apple Shop Uganda"><div class="project-art"><div class="mock-browser"><div class="mock-top"></div><div class="mock-hero"></div><div class="mock-bottom"><i></i><i></i><i></i></div></div></div></a><div class="project-info"><h3>Apple Shop Uganda</h3><p>appleshopuganda.com</p><span class="tag">eCommerce · Storefront</span><div style="margin-top:14px"><a class="project-link" href="https://appleshopuganda.com/" target="_blank" rel="noopener noreferrer">Visit website <span>↗</span></a></div></div></article><article class="project glass"><a href="https://signsstore.in/" target="_blank" rel="noopener noreferrer" aria-label="Visit Signs Store India"><div class="project-art"><div class="mock-browser"><div class="mock-top"></div><div class="mock-hero"></div><div class="mock-bottom"><i></i><i></i><i></i></div></div></div></a><div class="project-info"><h3>Signs Store India</h3><p>signsstore.in</p><span class="tag">Signage · Business website</span><div style="margin-top:14px"><a class="project-link" href="https://signsstore.in/" target="_blank" rel="noopener noreferrer">Visit website <span>↗</span></a></div></div></article><article class="project glass"><a href="https://poshbeauty.ug/" target="_blank" rel="noopener noreferrer" aria-label="Visit Posh Beauty"><div class="project-art"><div class="mock-browser"><div class="mock-top"></div><div class="mock-hero"></div><div class="mock-bottom"><i></i><i></i><i></i></div></div></div></a><div class="project-info"><h3>Posh Beauty</h3><p>poshbeauty.ug</p><span class="tag">Beauty · Online store</span><div style="margin-top:14px"><a class="project-link" href="https://poshbeauty.ug/" target="_blank" rel="noopener noreferrer">Visit website <span>↗</span></a></div></div></article><article class="project glass"><a href="https://qudodesigns.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Qudo Designs"><div class="project-art"><div class="mock-browser"><div class="mock-top"></div><div class="mock-hero"></div><div class="mock-bottom"><i></i><i></i><i></i></div></div></div></a><div class="project-info"><h3>Qudo Designs</h3><p>qudodesigns.com</p><span class="tag">Design · Creative business</span><div style="margin-top:14px"><a class="project-link" href="https://qudodesigns.com/" target="_blank" rel="noopener noreferrer">Visit website <span>↗</span></a></div></div></article><article class="project glass"><a href="https://lawsandlegals.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Laws & Legals"><div class="project-art"><div class="mock-browser"><div class="mock-top"></div><div class="mock-hero"></div><div class="mock-bottom"><i></i><i></i><i></i></div></div></div></a><div class="project-info"><h3>Laws & Legals</h3><p>lawsandlegals.com</p><span class="tag">Legal · Professional website</span><div style="margin-top:14px"><a class="project-link" href="https://lawsandlegals.com/" target="_blank" rel="noopener noreferrer">Visit website <span>↗</span></a></div></div></article><article class="project glass"><a href="https://jantantra24news.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Jantantra 24 News"><div class="project-art"><div class="mock-browser"><div class="mock-top"></div><div class="mock-hero"></div><div class="mock-bottom"><i></i><i></i><i></i></div></div></div></a><div class="project-info"><h3>Jantantra 24 News</h3><p>jantantra24news.com</p><span class="tag">News · Digital publishing</span><div style="margin-top:14px"><a class="project-link" href="https://jantantra24news.com/" target="_blank" rel="noopener noreferrer">Visit website <span>↗</span></a></div></div></article><article class="project glass"><a href="https://usefranca.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Visit Use Franca"><div class="project-art"><div class="mock-browser"><div class="mock-top"></div><div class="mock-hero"></div><div class="mock-bottom"><i></i><i></i><i></i></div></div></div></a><div class="project-info"><h3>Use Franca</h3><p>usefranca.com.br</p><span class="tag">Brand · Business website</span><div style="margin-top:14px"><a class="project-link" href="https://usefranca.com.br/" target="_blank" rel="noopener noreferrer">Visit website <span>↗</span></a></div></div></article><article class="project glass"><a href="https://mannillam.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Mannillam"><div class="project-art"><div class="mock-browser"><div class="mock-top"></div><div class="mock-hero"></div><div class="mock-bottom"><i></i><i></i><i></i></div></div></div></a><div class="project-info"><h3>Mannillam</h3><p>mannillam.com</p><span class="tag">Business · Website design</span><div style="margin-top:14px"><a class="project-link" href="https://mannillam.com/" target="_blank" rel="noopener noreferrer">Visit website <span>↗</span></a></div></div></article>
 </div></section>
-<section class="section" id="feedback"><div class="section-head"><div><div class="kicker">Client experience</div><h2>Good work starts with trust.</h2><p class="sub">A professional project experience matters as much as the finished website. I focus on the details that help projects run smoothly.</p></div></div><div class="feedback-grid"><article class="feedback-card glass"><div class="feedback-symbol">✦</div><h3>Clear communication</h3><p>Understand the scope, agree on priorities, and keep project updates straightforward from start to finish.</p><span class="feedback-label">CLIENT-FIRST APPROACH</span></article><article class="feedback-card glass"><div class="feedback-symbol">↗</div><h3>Careful delivery</h3><p>Responsive layouts, attention to visual details, and a practical review before handoff.</p><span class="feedback-label">QUALITY FOCUSED</span></article><article class="feedback-card glass"><div class="feedback-symbol">◇</div><h3>Built around your goals</h3><p>Whether it is a business website or an online store, the build should fit your audience and real needs.</p><span class="feedback-label">TAILORED SOLUTIONS</span></article></div></section>
+<section class="section" id="feedback">
+<div class="section-head"><div><div class="kicker">Client reviews</div><h2>Clients across the world.</h2><p class="sub">A dedicated space for feedback from clients. Review messages will be published here once the original feedback is available.</p></div></div>
+<div class="review-shell glass">
+  <div class="review-viewport" aria-label="Client review slider">
+    <div class="review-track">
+      <article class="review-slide"><div class="review-quote">“</div><span class="review-country">PAKISTAN · BAHAWALPUR</span><h3>Basit Ali</h3><p class="review-pending">Client feedback to be added</p></article>
+      <article class="review-slide"><div class="review-quote">“</div><span class="review-country">INDIA</span><h3>Deepak</h3><p class="review-pending">Client feedback to be added</p></article>
+      <article class="review-slide"><div class="review-quote">“</div><span class="review-country">INDIA</span><h3>Nithin</h3><p class="review-pending">Client feedback to be added</p></article>
+      <article class="review-slide"><div class="review-quote">“</div><span class="review-country">INDIA</span><h3>Rajish</h3><p class="review-pending">Client feedback to be added</p></article>
+      <article class="review-slide"><div class="review-quote">“</div><span class="review-country">UGANDA</span><h3>MC Danial</h3><p class="review-pending">Client feedback to be added</p></article>
+      <article class="review-slide"><div class="review-quote">“</div><span class="review-country">CANADA</span><h3>Client in Canada</h3><p class="review-pending">Client name and feedback to be added</p></article>
+      <article class="review-slide"><div class="review-quote">“</div><span class="review-country">UNITED STATES</span><h3>Client in the USA</h3><p class="review-pending">Client name and feedback to be added</p></article>
+    </div>
+  </div>
+  <div class="review-controls"><button class="review-arrow" type="button" data-review-prev aria-label="Previous reviews">←</button><div class="review-dots" aria-label="Choose review slide"></div><button class="review-arrow" type="button" data-review-next aria-label="Next reviews">→</button></div>
+  <p class="review-note">Names and locations are listed as supplied; feedback text is pending so no review quotes are invented.</p>
+</div>
+</section>
 <section class="section" id="about"><div class="section-head"><div><div class="kicker">About me</div><h2>Creative thinking. Solid execution.</h2><p class="sub">I combine design sensibility with practical development to deliver websites that look polished, work well on mobile, and are easy for clients to use.</p></div></div>
 <div class="glass" style="padding:28px;border-radius:24px"><p style="margin-top:0;color:var(--muted)">My work spans WordPress and Shopify development, custom theme and plugin work, UI/UX design, and turning design files into working websites. I hold a BS in Computer Science from the University of Education Lahore and work with clients remotely.</p><div class="skills"><span class="skill glass">WordPress</span><span class="skill glass">Shopify</span><span class="skill glass">WooCommerce</span><span class="skill glass">Elementor</span><span class="skill glass">Custom Themes</span><span class="skill glass">Plugin Development</span><span class="skill glass">HTML / CSS</span><span class="skill glass">Figma to Website</span><span class="skill glass">Responsive UI/UX</span><span class="skill glass">Web Apps</span></div></div>
 </section>
@@ -184,6 +223,51 @@ body:after{content:"";position:fixed;z-index:-1;inset:0;pointer-events:none;opac
     });
     card.addEventListener('pointerleave',function(){card.style.transform='';});
   });
+})();
+</script>
+
+
+<script>
+(function(){
+  var viewport=document.querySelector('.review-viewport');
+  var track=document.querySelector('.review-track');
+  if(!viewport||!track)return;
+  var slides=Array.prototype.slice.call(track.children);
+  var dotsWrap=document.querySelector('.review-dots');
+  var prev=document.querySelector('[data-review-prev]');
+  var next=document.querySelector('[data-review-next]');
+  var index=0,timer=null,startX=0;
+  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function perView(){return window.matchMedia('(max-width:540px)').matches?1:(window.matchMedia('(max-width:800px)').matches?2:3);}
+  function maxIndex(){return Math.max(0,slides.length-perView());}
+  function renderDots(){
+    dotsWrap.innerHTML='';
+    for(var i=0;i<=maxIndex();i++){
+      var b=document.createElement('button');b.type='button';b.className='review-dot';b.setAttribute('aria-label','Show review group '+(i+1));
+      (function(n,button){button.addEventListener('click',function(){go(n);restart();});})(i,b);
+      dotsWrap.appendChild(b);
+    }
+  }
+  function update(){
+    index=Math.max(0,Math.min(index,maxIndex()));
+    var basis=100/perView();
+    track.style.transform='translateX(-'+(index*basis)+'%)';
+    Array.prototype.forEach.call(dotsWrap.children,function(dot,i){dot.setAttribute('aria-current',i===index?'true':'false');});
+    prev.disabled=index===0;next.disabled=index===maxIndex();
+    prev.style.opacity=prev.disabled?'.45':'1';next.style.opacity=next.disabled?'.45':'1';
+  }
+  function go(n){index=n;update();}
+  function advance(){go(index>=maxIndex()?0:index+1);}
+  function stop(){if(timer){window.clearInterval(timer);timer=null;}}
+  function restart(){stop();if(!reduced&&maxIndex()>0)timer=window.setInterval(advance,5000);}
+  prev.addEventListener('click',function(){go(index<=0?maxIndex():index-1);restart();});
+  next.addEventListener('click',function(){go(index>=maxIndex()?0:index+1);restart();});
+  viewport.addEventListener('mouseenter',stop);viewport.addEventListener('mouseleave',restart);
+  viewport.addEventListener('focusin',stop);viewport.addEventListener('focusout',restart);
+  viewport.addEventListener('touchstart',function(e){startX=e.changedTouches[0].clientX;stop();},{passive:true});
+  viewport.addEventListener('touchend',function(e){var delta=e.changedTouches[0].clientX-startX;if(Math.abs(delta)>45){go(delta<0?(index>=maxIndex()?0:index+1):(index<=0?maxIndex():index-1));}restart();},{passive:true});
+  window.addEventListener('resize',function(){renderDots();update();});
+  renderDots();update();restart();
 })();
 </script>
 

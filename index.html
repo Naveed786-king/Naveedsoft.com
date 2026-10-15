@@ -204,13 +204,30 @@ img,video,iframe{max-width:100%}
 }
 @media(prefers-reduced-motion:reduce){.review-track{transition:none!important}}
 
+
+/* Custom coding expertise section */
+.custom-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.custom-card{padding:24px;border-radius:23px;min-width:0;position:relative;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.custom-card:after{content:"";position:absolute;right:-45px;bottom:-52px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,#ff9b5530,transparent 70%);pointer-events:none}
+.custom-card:hover{transform:translateY(-5px);box-shadow:0 28px 65px rgba(35,28,20,.12);border-color:#ffb77b}
+.custom-icon{display:grid;place-items:center;width:45px;height:45px;margin-bottom:17px;border-radius:15px;color:#d95716;font-size:20px;font-weight:850;background:linear-gradient(135deg,#fff7f0,#ffe2cb);border:1px solid #ffffff;box-shadow:inset 0 1px 0 #fff,0 8px 22px #ff762812}
+.custom-card h3{margin:0 0 8px;font-size:17px;letter-spacing:-.3px}
+.custom-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.75}
+.custom-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.custom-tags span{font-size:10px;font-weight:800;padding:5px 8px;border-radius:999px;background:#fff7f0;border:1px solid #ffe5d2;color:#a84b17}
+.custom-stack{margin-top:18px;border-radius:22px;padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.custom-stack p{margin:7px 0 0;color:var(--muted);font-size:13px;line-height:1.8}
+.custom-stack .btn{flex-shrink:0}
+@media(max-width:800px){.custom-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.custom-stack{align-items:flex-start;flex-direction:column}}
+@media(max-width:540px){.custom-grid{grid-template-columns:minmax(0,1fr)}.custom-card{padding:22px}.custom-stack{padding:20px}.custom-stack .btn{width:100%;white-space:normal}.navlinks a[href="#custom-coding"]{display:none}}
+
 </style>
 </head>
 <body>
 <div class="wrap">
 <nav class="nav glass" aria-label="Main navigation">
 <a class="brand" href="#home">NAVEED<span>.</span></a>
-<div class="navlinks"><a href="#services">Services</a><a href="#work">Projects</a><a href="#about">About</a><a href="#feedback">Reviews</a><a href="#contact">Contact</a></div>
+<div class="navlinks"><a href="#services">Services</a><a href="#custom-coding">Custom Coding</a><a href="#work">Projects</a><a href="#about">About</a><a href="#feedback">Reviews</a><a href="#contact">Contact</a></div>
 <a class="btn primary" href="https://api.whatsapp.com/send?phone=923252314412" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
 </nav>
 <main>
@@ -229,6 +246,30 @@ img,video,iframe{max-width:100%}
 <article class="service glass"><div class="service-icon">▧</div><h3>Shopify Stores</h3><p>Store setup and customization, responsive storefronts, product pages, theme adjustments and eCommerce experiences.</p></article>
 <article class="service glass"><div class="service-icon">✳</div><h3>Custom Web Experiences</h3><p>Responsive front ends, Figma-to-website builds, HTML-to-WordPress conversion, UI/UX and AI-assisted web apps.</p></article>
 </div>
+</section>
+<section class="section" id="custom-coding">
+  <div class="section-head">
+    <div>
+      <div class="kicker">Custom development & coding</div>
+      <h2>More than a ready-made theme.</h2>
+      <p class="sub">Custom website functionality and practical code tailored to your workflow — from storefront improvements to bespoke features, integrations and polished responsive interfaces.</p>
+    </div>
+  </div>
+  <div class="custom-grid">
+    <article class="custom-card glass"><span class="custom-icon">⌘</span><h3>Custom PHP Development</h3><p>Project-specific PHP functionality, form processing, conditional logic and backend enhancements for WordPress-based websites.</p><div class="custom-tags"><span>PHP</span><span>Backend logic</span></div></article>
+    <article class="custom-card glass"><span class="custom-icon">W</span><h3>WordPress Themes & Plugins</h3><p>Theme customization, reusable templates, custom post types, plugin configuration and purpose-built features for business needs.</p><div class="custom-tags"><span>WordPress</span><span>Hooks & filters</span></div></article>
+    <article class="custom-card glass"><span class="custom-icon">▣</span><h3>WooCommerce Customization</h3><p>Product layouts, cart and checkout refinements, product options, pricing rules and smoother shopping journeys.</p><div class="custom-tags"><span>WooCommerce</span><span>Checkout UX</span></div></article>
+    <article class="custom-card glass"><span class="custom-icon">S</span><h3>Shopify & Liquid</h3><p>Storefront sections, theme edits, product page improvements, collection layouts and responsive Shopify experiences.</p><div class="custom-tags"><span>Shopify</span><span>Liquid</span></div></article>
+    <article class="custom-card glass"><span class="custom-icon">⟷</span><h3>API & Service Integrations</h3><p>Connect compatible third-party services, forms, CRM tools and store features using available APIs, apps or webhooks.</p><div class="custom-tags"><span>REST APIs</span><span>Webhooks</span></div></article>
+    <article class="custom-card glass"><span class="custom-icon">↗</span><h3>Payment & Checkout Flows</h3><p>Payment gateway setup, checkout configuration and troubleshooting, subject to provider availability and account requirements.</p><div class="custom-tags"><span>Payments</span><span>Order flow</span></div></article>
+    <article class="custom-card glass"><span class="custom-icon">〈〉</span><h3>Front-End Coding</h3><p>Responsive layouts, interactive components, animations and custom page sections built with HTML, CSS and JavaScript.</p><div class="custom-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></article>
+    <article class="custom-card glass"><span class="custom-icon">◉</span><h3>Speed, SEO & Security</h3><p>Practical performance improvements, on-page SEO setup, technical checks, backups and security hardening for supported sites.</p><div class="custom-tags"><span>Performance</span><span>Technical SEO</span></div></article>
+    <article class="custom-card glass"><span class="custom-icon">✦</span><h3>Custom Web Apps & Dashboards</h3><p>Project-scoped web tools, admin interfaces, calculators, lead forms and AI-assisted app experiences with clear requirements.</p><div class="custom-tags"><span>Web apps</span><span>UI/UX</span></div></article>
+  </div>
+  <div class="custom-stack glass">
+    <div><span class="kicker">Development toolkit</span><p>WordPress · WooCommerce · Shopify · PHP · HTML5 · CSS3 · JavaScript · Liquid · REST API integration · GitHub · Responsive UI · SEO basics</p></div>
+    <a class="btn primary" href="https://api.whatsapp.com/send?phone=923252314412&amp;text=Hi%20Naveed%2C%20I%20have%20a%20custom%20development%20project." target="_blank" rel="noopener noreferrer">Discuss a custom feature ↗</a>
+  </div>
 </section>
 <section class="section" id="work"><div class="section-head"><div><div class="kicker">Selected work</div><h2>Projects in the real world.</h2><p class="sub">A selection of websites across eCommerce, beauty, signage, design, legal services and publishing.</p></div></div>
 <div class="project-grid">

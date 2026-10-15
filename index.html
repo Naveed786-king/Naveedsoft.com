@@ -40,6 +40,43 @@
 .phone-line{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .phone-line a{color:#d95a17;font-weight:800}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}.reveal-ready .reveal{opacity:1;transform:none}}
+
+/* Premium visual refinement */
+:root{--orange:#ff7628;--paper:#faf9f6;--shadow:0 24px 70px rgba(35,28,20,.075)}
+body{background:radial-gradient(ellipse at 78% 8%,rgba(255,142,73,.16),transparent 25%),radial-gradient(ellipse at 8% 56%,rgba(226,237,255,.48),transparent 28%),linear-gradient(180deg,#fcfbf9 0%,#f7f7f4 48%,#fbfaf8 100%);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(80,70,60,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(80,70,60,.025) 1px,transparent 1px);background-size:38px 38px;mask-image:linear-gradient(to bottom,black,transparent 75%)}
+.nav{background:rgba(255,255,255,.76);border-color:rgba(255,255,255,.95);box-shadow:0 12px 40px rgba(25,25,25,.065)}
+.brand{letter-spacing:-1px}.brand:after{content:"";display:inline-block;width:5px;height:5px;background:var(--orange);border-radius:50%;margin:0 0 2px 3px}
+.hero{padding-top:86px}.hero h1{line-height:.99;letter-spacing:-4.4px}.hero h1 em{background:linear-gradient(110deg,#ff9b55 0%,#f45d1b 48%,#c94712 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{line-height:1.85}.eyebrow{box-shadow:0 5px 20px rgba(255,118,40,.07)}
+.glass{background:rgba(255,255,255,.66);border:1px solid rgba(255,255,255,.94);box-shadow:0 18px 55px rgba(35,28,20,.065),inset 0 1px 0 rgba(255,255,255,.9)}
+.btn{position:relative;overflow:hidden}.primary{background:linear-gradient(115deg,#ff9d59,#ff7628 48%,#ed5b18);box-shadow:0 10px 25px rgba(255,118,40,.22)}
+.primary:after{content:"";position:absolute;top:-60%;left:-70%;width:45%;height:220%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);transform:rotate(22deg);transition:left .55s ease}
+.primary:hover:after{left:130%}
+.visual{filter:drop-shadow(0 16px 28px rgba(255,118,40,.05))}
+.orb{background:radial-gradient(circle at 30% 25%,#ffd4ad 0%,#ff9a54 35%,#fa6d25 68%,#d84c18 100%);box-shadow:inset -25px -30px 50px #a9341938,inset 12px 10px 32px #ffffff4d,0 35px 85px #ff76283b}
+.codecard{border-radius:28px;box-shadow:0 38px 90px rgba(28,23,18,.17),inset 0 1px 0 #fff}
+.float-chip{border-color:#ffffffef;box-shadow:0 14px 35px rgba(35,28,20,.09)}
+.section{padding-top:88px;padding-bottom:88px}
+.section h2{letter-spacing:-2px}.section-head{margin-bottom:34px}
+.stat,.service,.project,.step,.feedback-card{border:1px solid rgba(255,255,255,.92);box-shadow:0 15px 45px rgba(35,28,20,.045),inset 0 1px 0 #fff}
+.stat{position:relative;overflow:hidden}.stat:after{content:"";position:absolute;right:-28px;top:-36px;width:95px;height:95px;border-radius:50%;background:radial-gradient(circle,#ffb77f38,transparent 70%)}
+.stat strong{letter-spacing:-1.5px}
+.service{position:relative;overflow:hidden}.service:after{content:"";position:absolute;right:-48px;bottom:-58px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,#ff9a5220,transparent 70%);transition:transform .35s}.service:hover:after{transform:scale(1.5)}
+.service-icon{box-shadow:inset 0 1px 0 #fff,0 7px 18px #ff762814}
+.project{overflow:hidden}.project-art{height:205px}.mock-browser{box-shadow:0 20px 48px rgba(20,20,20,.14);transition:transform .4s ease}.project:hover .mock-browser{transform:rotate(0) scale(1.035)}
+.project-info{padding:22px 23px 24px}.project-info h3{letter-spacing:-.35px}.tag{border:1px solid #e8e4de;background:rgba(255,255,255,.72)}
+.project-link{display:inline-flex;align-items:center;gap:4px}.project-link span{transition:transform .2s}.project-link:hover span{transform:translate(3px,-3px)}
+.feedback-card,.step{transition:transform .25s ease,box-shadow .25s ease}.feedback-card:hover,.step:hover{transform:translateY(-4px)}
+.contact{border:1px solid #ffffff;box-shadow:0 24px 70px rgba(35,28,20,.08);background:radial-gradient(circle at 100% 0%,#ffe4d1 0%,transparent 38%),linear-gradient(120deg,rgba(255,255,255,.94),rgba(255,248,242,.88))}
+.footer{border-top:1px solid rgba(30,30,30,.07);margin-top:10px}
+.whatsapp-float{position:fixed;right:22px;bottom:22px;z-index:30;display:flex;align-items:center;gap:10px;padding:13px 17px;border:1px solid rgba(255,255,255,.95);border-radius:999px;background:rgba(255,255,255,.86);box-shadow:0 15px 40px rgba(25,25,25,.14);backdrop-filter:blur(18px);font-size:13px;font-weight:800;transition:transform .25s,box-shadow .25s}
+.whatsapp-float:hover{transform:translateY(-4px);box-shadow:0 20px 45px rgba(25,25,25,.19)}
+.whatsapp-float .wa-icon{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#20b96b;color:white;font-size:17px}
+@media(max-width:800px){.hero{padding-top:70px}.section{padding-top:65px;padding-bottom:65px}}
+@media(max-width:540px){.hero h1{letter-spacing:-2.8px}.section{padding-top:52px;padding-bottom:52px}.project-art{height:180px}.whatsapp-float{right:12px;bottom:12px;padding:9px 13px}.whatsapp-float .wa-label{display:none}.navlinks a:first-child{display:inline}.navlinks a:nth-child(3),.navlinks a:nth-child(4){display:none}}
+@media(prefers-reduced-motion:reduce){.primary:after{display:none}}
+
 </style>
 </head>
 <body>
@@ -95,5 +132,6 @@
   if(year)year.textContent=new Date().getFullYear();
 })();
 </script>
+<a class="whatsapp-float" href="https://api.whatsapp.com/send?phone=923252314412" target="_blank" rel="noopener noreferrer" aria-label="Chat with Naveed on WhatsApp"><span class="wa-icon">↗</span><span class="wa-label">Let’s talk on WhatsApp</span></a>
 </body>
 </html>

@@ -238,14 +238,40 @@ img,video,iframe{max-width:100%}
 .project-stamp{position:absolute;right:7%;bottom:13%;z-index:2;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);font-size:10px;font-weight:900;letter-spacing:1px;color:#29231f;box-shadow:0 8px 24px #0002}
 .project-featured{border-color:rgba(255,151,83,.22)}
 @media(max-width:540px){.project-meta{align-items:flex-start}.project-description{font-size:13px!important}}
+
+/* Accessible mobile navigation drawer */
+.mobile-menu-toggle{display:none;align-items:center;justify-content:center;gap:8px;min-width:48px;min-height:48px;padding:0 13px;border:1px solid rgba(30,30,30,.1);border-radius:14px;background:rgba(255,255,255,.86);color:#24211e;font:750 13px inherit;cursor:pointer;box-shadow:0 8px 22px rgba(25,25,25,.07)}
+.mobile-menu-toggle svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round}
+.mobile-menu-toggle[aria-expanded="true"]{background:#fff0e5;border-color:#ff762866;color:#c44f12}
+.project-shot{display:block;width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .55s ease}
+.project:hover .project-shot{transform:scale(1.035)}
+.project-art:has(.project-shot){background:#eee}
+@media(max-width:800px){
+ .nav{position:sticky;isolation:isolate;flex-wrap:wrap;gap:8px}
+ .mobile-menu-toggle{display:inline-flex;margin-left:auto}
+ .navlinks{display:none;position:absolute;top:calc(100% + 9px);left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:9px;border:1px solid rgba(255,255,255,.96);border-radius:19px;background:rgba(255,255,255,.97);box-shadow:0 22px 55px rgba(25,25,25,.14);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+ .navlinks.is-open{display:flex}
+ .navlinks a,.navlinks a:nth-child(2),.navlinks a:nth-child(3){display:flex;align-items:center;min-height:48px;padding:0 14px;border-radius:12px;font-size:14px}
+ .navlinks a:hover,.navlinks a:focus-visible{background:#fff1e7;outline:none}
+ .nav .nav-cta{margin-left:auto}
+}
+@media(max-width:540px){
+ .nav{display:flex}
+ .nav .nav-cta{padding:10px 12px;font-size:11px}
+ .mobile-menu-toggle{min-width:46px;padding:0 10px}
+ .navlinks{z-index:20}
+ .project-art{height:190px}
+}
+
 </style>
 </head>
 <body>
 <div class="wrap">
 <nav class="nav glass" aria-label="Main navigation">
 <a class="brand" href="#home">NAVEED<span>.</span></a>
-<div class="navlinks"><a href="#services">Services</a><a href="#custom-coding">Custom Coding</a><a href="#work">Projects</a><a href="#about">About</a><a href="#feedback">Reviews</a><a href="#contact">Contact</a></div>
-<a class="btn primary" href="https://api.whatsapp.com/send?phone=923252314412" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+<div class="navlinks" id="primaryNav"><a href="#services">Services</a><a href="#custom-coding">Custom Coding</a><a href="#work">Projects</a><a href="#about">About</a><a href="#feedback">Reviews</a><a href="#contact">Contact</a></div>
+<a class="btn primary nav-cta" href="https://api.whatsapp.com/send?phone=923252314412" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+<button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primaryNav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span></button>
 </nav>
 <main>
 <section class="hero" id="home">
@@ -400,6 +426,45 @@ img,video,iframe{max-width:100%}
   viewport.addEventListener('touchend',function(e){var delta=e.changedTouches[0].clientX-startX;if(Math.abs(delta)>45){go(delta<0?(index>=maxIndex()?0:index+1):(index<=0?maxIndex():index-1));}restart();},{passive:true});
   window.addEventListener('resize',function(){renderDots();update();});
   renderDots();update();restart();
+})();
+</script>
+
+
+<script>
+(function(){
+  var nav=document.querySelector('.nav');
+  var toggle=document.querySelector('.mobile-menu-toggle');
+  var menu=document.getElementById('primaryNav');
+  if(toggle&&menu){
+    function closeMenu(){menu.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open navigation menu');}
+    toggle.addEventListener('click',function(){
+      var opening=toggle.getAttribute('aria-expanded')!=='true';
+      toggle.setAttribute('aria-expanded',String(opening));
+      toggle.setAttribute('aria-label',opening?'Close navigation menu':'Open navigation menu');
+      menu.classList.toggle('is-open',opening);
+    });
+    menu.querySelectorAll('a').forEach(function(link){link.addEventListener('click',closeMenu);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeMenu();toggle.focus();}});
+    document.addEventListener('click',function(e){if(nav&&!nav.contains(e.target))closeMenu();});
+    window.addEventListener('resize',function(){if(window.innerWidth>800)closeMenu();});
+  }
+  /* Live page captures for every portfolio project card. */
+  document.querySelectorAll('.project').forEach(function(card){
+    var link=card.querySelector('.project-art')&&card.querySelector('.project-art').closest('a');
+    var art=card.querySelector('.project-art');
+    if(!link||!art)return;
+    var target=link.getAttribute('href');
+    if(!target||!/^https?:\/\//i.test(target))return;
+    var img=document.createElement('img');
+    img.className='project-shot';
+    img.loading='lazy';
+    img.decoding='async';
+    img.alt='Website screenshot preview of '+(card.querySelector('h3')?card.querySelector('h3').textContent.trim():'project');
+    img.src='https://image.thum.io/get/width/1200/crop/700/noanimate/'+target;
+    img.onerror=function(){img.remove();};
+    var mock=art.querySelector('.mock-browser');
+    if(mock)mock.replaceWith(img);else art.insertBefore(img,art.firstChild);
+  });
 })();
 </script>
 
